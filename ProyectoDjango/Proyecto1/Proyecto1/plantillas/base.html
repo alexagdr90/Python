@@ -1,0 +1,38 @@
+<html>
+
+<head>
+
+
+    <title>
+
+        {% block title %} {% endblock %}
+    
+    </title>
+
+
+
+<body>
+
+
+    <h1 style="background-color: darkgreen; color:white; text-align: center">Mi Primera Pagina</h1>
+
+    {% include "superior/barra.html" %}
+
+    <h1>Cursos de Programacion, Ofimatica y Diseño Web</h1>
+
+    {% block content %}
+    
+    
+    {% endblock %}
+
+    <p style="background-color: darkgreen; color:white; text-align: center">Cursos gratuitos. Gracias por su visita.</p>
+
+</body>
+
+
+
+</head>
+
+
+
+</html>

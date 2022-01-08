@@ -1,9 +1,45 @@
 <html>
     <body>
+
+        {% include "superior/barra.html" %}
     <h2 style="color: red">
     Hola esta es mi primera pagina con Django y una plantilla
     </h2>
-    <p>Mi nombre es: {{nombre_persona}} {{apellido_persona}}</p>
+
+    {# DISEÑADOR! IGNORA ESTA PARTE #}
+    {% if nombre_persona == 'Profesor Alejandro'%}
+
+
+    <p>El curso lo imparte el profesor titular</p>
+
+    {% else %}
+
+    <p>El curso lo impate el profesor suplente</p>
+
+    {% endif %}
+
+
+
+    <p>Mi nombre es: {{nombre_persona.upper}} {{apellido_persona.upper}}</p>
     <p>Estamos viendo el tema de las plantillas a dia: {{momento_actual.day}} / {{momento_actual.month}} / {{momento_actual.year}}</p>
+    <p><strong>Temas del curso:</strong>:</p>
+    <p>
+        <ul>
+            {% if temas %}
+
+                {% for elTema in temas %}
+        
+                <li>{{ elTema|upper}}</li>
+            
+                {% endfor %}
+
+            {% else %}
+                <p>No hay elementos en la lista.</p>
+            {% endif %}
+
+        </ul>
+        
+    </p>
+
 </body>
     </html>
